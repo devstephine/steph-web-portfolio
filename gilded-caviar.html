@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gilded Caviar | Haute Gastronomy & Royal Caviar Service</title>
+  <meta name="description" content="Experience rare sturgeon caviar selections, wood-fired seafood delicacies, and vintage champagnes in an atmosphere of timeless elegance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #141418;
+      --gold: #c5912d;
+      --gold-light: #f3e5ab;
+      --border: rgba(197, 145, 45, 0.25);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Cinzel', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: var(--bg); color: #e5e5e7; line-height: 1.6; }
+    h1, h2, h3 { font-family: var(--font-serif); }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .demo-bar { background: #1a150b; border-bottom: 1px solid var(--border); color: var(--gold-light); font-size: 0.75rem; padding: 6px 16px; text-align: center; display: flex; justify-content: center; gap: 12px; }
+    .demo-pill { background: var(--gold); color: #000; padding: 2px 6px; font-weight: 700; font-size: 0.65rem; border-radius: 2px; }
+
+    header { position: sticky; top: 0; z-index: 50; background: rgba(9,9,11,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.2em; color: #fff; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.12em; }
+
+    .hero { position: relative; min-height: 80vh; display: flex; align-items: center; background: linear-gradient(to right, rgba(9,9,11,0.95) 40%, rgba(9,9,11,0.6) 100%), url('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; color: #fff; padding: 4rem 2rem; }
+    .hero-content { max-width: 1200px; margin: 0 auto; width: 100%; }
+    .hero-title { font-size: clamp(2.5rem, 5vw, 4.5rem); max-width: 18ch; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 300; }
+    .hero-title span { color: var(--gold-light); font-style: italic; }
+
+    section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; }
+    .card-title { font-size: 1.5rem; color: #fff; font-weight: 400; margin-bottom: 0.25rem; }
+    .card-price { font-family: monospace; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem; }
+
+    .btn-gold { background: var(--gold); color: #000; padding: 0.85rem 1.8rem; font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; display: inline-block; }
+
+    footer { background: #040405; border-top: 1px solid rgba(255,255,255,0.08); padding: 3rem 2rem; text-align: center; font-size: 0.82rem; color: #71717a; }
+  </style>
+</head>
+<body>
+
+  <aside class="demo-bar">
+    <span class="demo-pill">PORTFOLIO DEMO</span>
+    <span>Gilded Caviar — Haute Gastronomy & Royal Service by Stephanie N.</span>
+    <a href="index.html" style="color:#fff; text-decoration:underline;">&larr; Back to Portfolio</a>
+  </aside>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">GILDED CAVIAR</a>
+      <ul class="nav-links">
+        <li><a href="#menu">Caviar Menu</a></li>
+        <li><a href="#reserve">Reservations</a></li>
+        <li><a href="index.html">Portfolio Home</a></li>
+      </ul>
+      <a href="#reserve" class="btn-gold">Reserve Table</a>
+    </div>
+  </header>
+
+  <section class="hero" style="max-width:100%; margin:0; padding:5rem 2rem;">
+    <div class="hero-content">
+      <span style="font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.25em; font-size:0.75rem; color:var(--gold); display:block; margin-bottom:1rem;">Mayfair, London · Haute Gastronomy</span>
+      <h1 class="hero-title">The Art of Caviar & <span>Haute Gastronomy</span></h1>
+      <a href="#menu" class="btn-gold">Explore Menu</a>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2 style="font-size:2.5rem; margin-bottom:2rem; text-align:center; font-weight:300;">The Royal Caviar Service</h2>
+    <div class="grid">
+      <div class="card">
+        <div>
+          <h3 class="card-title">Imperial Golden Osetra</h3>
+          <div class="card-price">£180 / 30g · £290 / 50g</div>
+          <p style="font-size:0.85rem; color:#a1a1aa; margin-bottom:1rem;">Firm, luminous golden amber roe with a complex buttery profile and an enduring hazelnut finish. Accompanied by mother-of-pearl service, warm buckwheat blinis, and crème fraîche.</p>
+        </div>
+        <a href="#reserve" class="btn-gold" style="text-align:center;">Reserve For Table</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3 class="card-title">Beluga Reserve Hybrid</h3>
+          <div class="card-price">£260 / 30g · £420 / 50g</div>
+          <p style="font-size:0.85rem; color:#a1a1aa; margin-bottom:1rem;">Extra-large steel grey pearls delivering an ethereal, velvety burst of pure marine essence. Aged for 9 months in virgin sea-salt barrels.</p>
+        </div>
+        <a href="#reserve" class="btn-gold" style="text-align:center;">Reserve For Table</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3 class="card-title">Siberian Royal Baerii</h3>
+          <div class="card-price">£120 / 30g · £195 / 50g</div>
+          <p style="font-size:0.85rem; color:#a1a1aa; margin-bottom:1rem;">Dark ebony beads offering clean, assertive mineral salinity with subtle notes of sweet sea spray and wild nori.</p>
+        </div>
+        <a href="#reserve" class="btn-gold" style="text-align:center;">Reserve For Table</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserve" style="background:#0f0f13; border-top:1px solid var(--border); border-bottom:1px solid var(--border); max-width:100%; padding:4rem 2rem;">
+    <div style="max-width:600px; margin:0 auto; text-align:center;">
+      <h2 style="font-size:2.2rem; margin-bottom:1rem; font-weight:300;">Request A Salon Table</h2>
+      <p style="font-size:0.85rem; color:#a1a1aa; margin-bottom:2rem;">Submitting this request simulates an instant booking receipt. No charges incurred.</p>
+      
+      <form onsubmit="handleReserve(event)" style="display:flex; flex-direction:column; gap:1rem; text-align:left;">
+        <div>
+          <label style="font-size:0.75rem; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px;">Guest Name</label>
+          <input type="text" id="gName" required placeholder="Lady Vivienne Montgomery" style="width:100%; background:#09090b; border:1px solid #27272a; padding:10px; color:#fff; border-radius:4px;">
+        </div>
+        <div>
+          <label style="font-size:0.75rem; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px;">Party Size</label>
+          <select id="gGuests" style="width:100%; background:#09090b; border:1px solid #27272a; padding:10px; color:#fff; border-radius:4px;">
+            <option>2 Guests (Intimate Table)</option>
+            <option>4 Guests (Salon Booth)</option>
+            <option>6 Guests (Imperial Round)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%; padding:12px; margin-top:8px;">Submit Demo Table Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Gilded Caviar. Fictional Showcase Website. Built with clean HTML, CSS, and Vanilla JavaScript by Stephanie N.</p>
+  </footer>
+
+  <script>
+    function handleReserve(e) {
+      e.preventDefault();
+      const name = document.getElementById('gName').value;
+      const guests = document.getElementById('gGuests').value;
+      alert('Voucher #GC-2026-8842 Confirmed!\nGuest: ' + name + '\nParty: ' + guests + '\nMayfair Salon allocation logged.');
+    }
+  </script>
+</body>
+</html>

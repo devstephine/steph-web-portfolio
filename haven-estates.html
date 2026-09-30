@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haven Estates – Luxury Architectural Real Estate</title>
+  <meta name="description" content="Explore luxury architectural estates, waterfront villas, and bespoke penthouses with Haven Estates. Interactive demo with property filters and mortgage simulator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FBFBF9;
+      --card-bg: #FFFFFF;
+      --text: #181715;
+      --text-muted: #57534E;
+      --gold: #C5A880;
+      --border: #E5E5DF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+    h1, h2, h3, .font-serif { font-family: var(--font-serif); }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .demo-bar { background: #181715; color: #E7E5E4; font-size: 0.75rem; padding: 6px 16px; text-align: center; display: flex; justify-content: center; gap: 12px; }
+    .demo-pill { background: var(--gold); color: #000; padding: 2px 6px; font-weight: 700; font-size: 0.65rem; border-radius: 2px; }
+
+    header { position: sticky; top: 0; z-index: 50; background: rgba(251,251,249,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-container { max-width: 1240px; margin: 0 auto; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-size: 1.6rem; font-weight: 700; }
+    .brand span { font-weight: 300; font-style: italic; color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.85rem; text-transform: uppercase; font-weight: 500; }
+
+    .hero { position: relative; min-height: 80vh; display: flex; align-items: center; background: linear-gradient(to right, rgba(24,23,21,0.94) 30%, rgba(24,23,21,0.5) 100%), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; color: #fff; padding: 4rem 2rem; }
+    .hero-content { max-width: 1240px; margin: 0 auto; width: 100%; }
+    .hero-title { font-size: clamp(2.5rem, 5.5vw, 4.5rem); max-width: 18ch; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 600; }
+
+    section { padding: 5rem 2rem; max-width: 1240px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); overflow: hidden; }
+    .card-img-wrap { aspect-ratio: 16/10; overflow: hidden; }
+    .card-img { width: 100%; height: 100%; object-fit: cover; }
+    .card-body { padding: 1.5rem; }
+    .card-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .card-price { font-family: monospace; font-size: 1.25rem; font-weight: 700; color: #181715; margin-bottom: 0.5rem; }
+
+    .calc-box { background: #fff; border: 1px solid var(--border); padding: 2rem; border-radius: 6px; margin-top: 3rem; }
+    .btn-dark { background: #181715; color: #fff; padding: 0.85rem 1.8rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; display: inline-block; }
+
+    footer { background: #181715; color: #A8A29E; padding: 3rem 2rem; text-align: center; font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+
+  <aside class="demo-bar">
+    <span class="demo-pill">PORTFOLIO DEMO</span>
+    <span>Haven Estates — Luxury Architectural Real Estate by Stephanie N.</span>
+    <a href="index.html" style="color:#fff; text-decoration:underline;">&larr; Back to Portfolio</a>
+  </aside>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand font-serif">Haven <span>Estates</span></a>
+      <ul class="nav-links">
+        <li><a href="#properties">Residences</a></li>
+        <li><a href="#calculator">Mortgage Model</a></li>
+        <li><a href="index.html">Portfolio Home</a></li>
+      </ul>
+      <a href="#calculator" class="btn-dark">Inquire</a>
+    </div>
+  </header>
+
+  <section class="hero" style="max-width:100%; margin:0; padding:5rem 2rem;">
+    <div class="hero-content">
+      <span style="text-transform:uppercase; letter-spacing:0.2em; font-size:0.75rem; color:var(--gold); display:block; margin-bottom:1rem;">Private Architectural Portfolio</span>
+      <h1 class="hero-title font-serif">Sanctuary designed with permanence and light.</h1>
+      <a href="#properties" class="btn-dark" style="background:#fff; color:#000;">View Portfolio</a>
+    </div>
+  </section>
+
+  <section id="properties">
+    <h2 class="font-serif" style="font-size:2.4rem; margin-bottom:2rem;">Available Residences</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Big Sur Villa" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title font-serif">The Horizon Monolith</h3>
+          <div class="card-price">$18,500,000</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Big Sur, California · 5 Beds · 6.5 Baths · 8,200 sq ft</p>
+          <button onclick="selectEstate('The Horizon Monolith', 18500000)" class="btn-dark" style="width:100%; text-align:center;">Calculate Financing</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Aspen Solarium" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title font-serif">The Aspen Solarium</h3>
+          <div class="card-price">$24,750,000</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Red Mountain, Aspen, CO · 6 Beds · 8 Baths · 10,400 sq ft</p>
+          <button onclick="selectEstate('The Aspen Solarium', 24750000)" class="btn-dark" style="width:100%; text-align:center;">Calculate Financing</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="Villa Mirasol" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title font-serif">Villa Mirasol</h3>
+          <div class="card-price">$32,000,000</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Cap d'Antibes, French Riviera · 7 Beds · 9 Baths · 11,800 sq ft</p>
+          <button onclick="selectEstate('Villa Mirasol', 32000000)" class="btn-dark" style="width:100%; text-align:center;">Calculate Financing</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Financing Simulator -->
+    <div class="calc-box" id="calculator">
+      <h3 class="font-serif" style="font-size:1.8rem; margin-bottom:0.5rem;">Capital & Financing Simulator</h3>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">Interactive loan modeling for luxury tier acquisitions.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; margin-bottom:1.5rem;">
+        <div>
+          <label style="display:block; font-size:0.8rem; font-weight:600; margin-bottom:4px;">Price: $<span id="lblPrice">18.5</span>M</label>
+          <input type="range" id="rngPrice" min="5000000" max="40000000" step="500000" value="18500000" oninput="recalc()" style="width:100%;">
+        </div>
+        <div>
+          <label style="display:block; font-size:0.8rem; font-weight:600; margin-bottom:4px;">Down Payment: <span id="lblDown">25</span>%</label>
+          <input type="range" id="rngDown" min="15" max="50" step="5" value="25" oninput="recalc()" style="width:100%;">
+        </div>
+        <div>
+          <label style="display:block; font-size:0.8rem; font-weight:600; margin-bottom:4px;">Rate: <span id="lblRate">5.85</span>%</label>
+          <input type="range" id="rngRate" min="3.5" max="8.5" step="0.05" value="5.85" oninput="recalc()" style="width:100%;">
+        </div>
+      </div>
+
+      <div style="background:#F5F5F0; padding:1.2rem; border-radius:4px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted);">Estimated Monthly Allocation:</span>
+          <div style="font-family:monospace; font-size:1.8rem; font-weight:700;" id="monthlyTotal">$98,420 /mo</div>
+        </div>
+        <button onclick="alert('Confidential Showing Request Logged!')" class="btn-dark">Submit Confidential Inquiry</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Haven Estates. Fictional Showcase Website. Built with clean HTML, CSS, and Vanilla JavaScript by Stephanie N.</p>
+  </footer>
+
+  <script>
+    function selectEstate(title, price) {
+      document.getElementById('rngPrice').value = price;
+      recalc();
+      document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+    }
+    function recalc() {
+      const price = parseFloat(document.getElementById('rngPrice').value);
+      const down = parseFloat(document.getElementById('rngDown').value);
+      const rate = parseFloat(document.getElementById('rngRate').value);
+
+      document.getElementById('lblPrice').textContent = (price / 1000000).toFixed(1);
+      document.getElementById('lblDown').textContent = down;
+      document.getElementById('lblRate').textContent = rate.toFixed(2);
+
+      const loan = price * (1 - down / 100);
+      const r = (rate / 100) / 12;
+      const n = 360;
+      const pi = (loan * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      const tax = (price * 0.011) / 12;
+      const total = Math.round(pi + tax);
+
+      document.getElementById('monthlyTotal').textContent = '$' + total.toLocaleString() + ' /mo';
+    }
+    recalc();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stephanie. N - Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Stephanie Nwaekelumma, featuring interactive concept web projects in FinTech, E-Commerce, Architecture, and Analytics with live interactive device previews.">
+  <meta property="og:title" content="Stephanie. N - Web Developer Portfolio">
+  <meta property="og:description" content="Portfolio of Stephanie Nwaekelumma, featuring interactive concept web projects in FinTech, E-Commerce, Architecture, and Analytics with live interactive device previews.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, and JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       STEPHANIE N. - WEB DEVELOPER PORTFOLIO
+       Complete Single-File Architecture: HTML5 + Modern CSS + Vanilla JavaScript
+       Clean, Professional, Zero External Build Tools Required
+       ========================================================================== */
+    :root {
+      --bg-canvas: #000000;
+      --bg-surface: #0a0f1d;
+      --bg-surface-elevated: #111827;
+      --bg-surface-hover: #1a2336;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.16);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #3b82f6;
+      --accent-emerald: #10b981;
+      --font-display: 'Syne', -apple-system, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --max-width: 1240px;
+      --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    input, select, textarea {
+      font-family: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Availability Status Bar */
+    .top-notice-bar {
+      background: #060b13;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      padding: 9px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--text-secondary);
+      position: sticky;
+      top: 0;
+      z-index: 110;
+    }
+    .status-dot-pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 8px var(--accent-emerald);
+      display: inline-block;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 36px;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.5rem;
+    }
+    .brand-wordmark {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .brand-dot {
+      color: var(--accent-cyan);
+    }
+    .brand-title-sub {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-left: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-primary);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.65rem 1.4rem;
+      background: #f8fafc;
+      color: #000000;
+      font-size: 0.86rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 18px rgba(255, 255, 255, 0.15);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.65rem 1.25rem;
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+      font-size: 0.86rem;
+      font-weight: 500;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .btn-outline:hover {
+      border-color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .mobile-toggle {
+      display: none;
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      padding: 6px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1.5rem;
+    }
+    .mobile-drawer.open {
+      display: block;
+    }
+    .mobile-drawer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6.5rem 0 4.5rem;
+      position: relative;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      color: var(--accent-cyan);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+      font-family: var(--font-mono);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      text-wrap: balance;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 44rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1.5rem;
+      padding-top: 2.25rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+      font-family: var(--font-mono);
+    }
+    .stat-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Sections Common */
+    .section {
+      padding: 5.5rem 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .section-header {
+      margin-bottom: 3.25rem;
+    }
+    .section-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-mono);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 42rem;
+      line-height: 1.7;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 6px;
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition);
+    }
+    .filter-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-medium);
+    }
+    .filter-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
+
+    /* Project Cards Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+    .project-img-wrapper {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #090e17;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.04);
+    }
+    .project-badge-float {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #38bdf8;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+    }
+    .project-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .project-meta-line {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-mono);
+    }
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--text-primary);
+    }
+    .project-summary {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .project-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 10px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 1.5rem;
+      font-size: 0.78rem;
+    }
+    .project-stat-col strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+    }
+    .project-stat-col span {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+    .project-btns {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .btn-launch-demo {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.7rem 1rem;
+      background: var(--accent-cyan);
+      color: #000;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: all var(--transition);
+    }
+    .btn-launch-demo:hover {
+      background: #7dd3fc;
+      transform: translateY(-1px);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .toolkit-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .toolkit-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .toolkit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .toolkit-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+    .toolkit-list li::before {
+      content: "-";
+      color: var(--accent-cyan);
+      font-weight: bold;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-medium);
+    }
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+    }
+    .service-heading {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .service-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      line-height: 1.65;
+    }
+    .service-points {
+      list-style: none;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .service-points li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+    .testimonial-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .testimonial-quote {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    .testimonial-role {
+      font-size: 0.78rem;
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3.5rem;
+    }
+    .channels-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .channel-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color var(--transition);
+    }
+    .channel-box:hover {
+      border-color: var(--border-medium);
+    }
+    .channel-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+      font-family: var(--font-mono);
+    }
+    .channel-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .contact-form {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-field label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%;
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      transition: border-color 0.15s ease;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+    }
+    .form-alert {
+      display: none;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    /* Modal Framework */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 150;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-window {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 1100px;
+      max-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+    .modal-bar {
+      background: #070b14;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .device-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #000;
+      padding: 3px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+    }
+    .device-btn {
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      transition: all 0.15s ease;
+    }
+    .device-btn.active {
+      background: var(--accent-cyan);
+      color: #000;
+      font-weight: 700;
+    }
+    .modal-frame-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+      background: #020408;
+      display: flex;
+      justify-content: center;
+    }
+    .modal-frame-inner {
+      width: 100%;
+      transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .frame-desktop { max-width: 100%; }
+    .frame-tablet { max-width: 768px; }
+    .frame-mobile { max-width: 414px; }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 4.5rem 0 3rem;
+      background: #02050b;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-disclaimer {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions .btn-primary {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .hero-title {
+        font-size: 2.4rem;
+      }
+      .section {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-notice-bar" aria-label="Availability Status">
+    <span class="status-dot-pulse"></span>
+    <span>Stephanie Nwaekelumma &middot; Web Developer Portfolio &middot; Lagos, Nigeria &middot; Available for Projects</span>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand-wordmark">
+        Stephanie. N <span class="brand-dot">.</span>
+        <span class="brand-title-sub">Web Developer</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#nigerian-demos" class="nav-link">Nigerian Demos</a></li>
+          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn-primary">Hire Stephanie</a>
+        <button id="mobileMenuBtn" class="mobile-toggle" aria-label="Toggle Navigation menu">&#9776;</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer">
+      <ul>
+        <li><a href="#about" class="nav-link" onclick="toggleMobileNav()">About</a></li>
+        <li><a href="#services" class="nav-link" onclick="toggleMobileNav()">Services</a></li>
+        <li><a href="#projects" class="nav-link" onclick="toggleMobileNav()">Projects</a></li>
+        <li><a href="#nigerian-demos" class="nav-link" onclick="toggleMobileNav()">Nigerian Demos</a></li>
+        <li><a href="#testimonials" class="nav-link" onclick="toggleMobileNav()">Reviews</a></li>
+        <li><a href="#contact" class="nav-link" onclick="toggleMobileNav()">Contact</a></li>
+        <li><a href="#contact" class="btn-primary" onclick="toggleMobileNav()" style="width: 100%; text-align: center;">Hire Stephanie</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="status-badge">
+        <span class="status-dot-pulse"></span>
+        <span>Web Developer &middot; Lagos / Remote</span>
+      </div>
+
+      <h1 class="hero-title">
+        Building High-Performance Websites with <span>Clean Code & Modern UX</span>.
+      </h1>
+
+      <p class="hero-subtitle">
+        I create clean, responsive websites and interactive web applications. Focused on thoughtful design, intuitive navigation, fast load times, and mobile-friendly experiences for businesses and creative brands.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">Explore My Projects</a>
+        <a href="#contact" class="btn-outline">Start a Conversation</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <p class="stat-label">Focus Area</p>
+          <p class="stat-value">Modern Frontend</p>
+        </div>
+        <div>
+          <p class="stat-label">Layout Quality</p>
+          <p class="stat-value">100% Mobile-Friendly</p>
+        </div>
+        <div>
+          <p class="stat-label">Interactivity</p>
+          <p class="stat-value">Responsive & Dynamic</p>
+        </div>
+        <div>
+          <p class="stat-label">Speed Metric</p>
+          <p class="stat-value">Sub-Second Load Time</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">About Stephanie</p>
+        <h2 class="section-title">Clean Code. Intentional Design.</h2>
+        <p class="section-desc">I am a passionate web developer focused on delivering clean, maintainable web experiences that look sharp, load effortlessly, and help brands present themselves with distinction.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hello! I am Stephanie Nwaekelumma, a web developer based in Lagos, Nigeria. I love turning concepts into reality through clean, reliable code. Whether it is an architectural portfolio, a digital banking concept, or a high-converting storefront, I focus on intuitive layouts, readable typography, and smooth responsiveness across screens.
+          </p>
+          <p>
+            I believe websites should speak directly to users, load quickly even on varying connection speeds, and be easy to maintain over time.
+          </p>
+          <p>
+            I am excited to collaborate on new website builds, redesigns, and creative digital projects worldwide.
+          </p>
+        </div>
+
+        <div class="toolkit-card">
+          <h3>What You Can Expect From Me</h3>
+          <ul class="toolkit-list">
+            <li>Clean, well-structured semantic code</li>
+            <li>Fluid mobile-friendly responsiveness on all devices</li>
+            <li>Fast loading speeds and optimized performance</li>
+            <li>Attention to typographic hierarchy and visual spacing</li>
+            <li>Clear, friendly, and timely communication</li>
+            <li>Honest dedication to getting every detail right</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">What I Offer</p>
+        <h2 class="section-title">Services & Solutions</h2>
+        <p class="section-desc">Structured web services designed to give your organization or project a credible, high-impact presence online.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <h3 class="service-heading">Website Design & Layouts</h3>
+          <p class="service-text">Thoughtfully structured interfaces focused on clean typography, intuitive spatial rhythm, and conversion-friendly layout hierarchy.</p>
+          <ul class="service-points">
+            <li>- Clean, modern layout concepts</li>
+            <li>- Visual hierarchy & brand colors</li>
+            <li>- Uncluttered, elegant aesthetics</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <h3 class="service-heading">Responsive Web Development</h3>
+          <p class="service-text">Fluid implementations engineered to look pristine on every screen size from small mobile phones to large desktop monitors.</p>
+          <ul class="service-points">
+            <li>- Mobile-first approach</li>
+            <li>- Cross-browser testing</li>
+            <li>- Touch-friendly menus & buttons</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <h3 class="service-heading">Business & Company Websites</h3>
+          <p class="service-text">Professional digital hubs engineered to communicate your value proposition, build client trust, and capture customer inquiries.</p>
+          <ul class="service-points">
+            <li>- Lead generation forms</li>
+            <li>- Search-friendly structure</li>
+            <li>- Clear service breakdowns</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <h3 class="service-heading">E-Commerce Storefronts</h3>
+          <p class="service-text">Intuitive online storefronts with frictionless browsing experiences, structured product catalogs, and smooth checkout flows.</p>
+          <ul class="service-points">
+            <li>- Product catalogs & variations</li>
+            <li>- Interactive shopping bag & cart</li>
+            <li>- Streamlined checkout paths</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <h3 class="service-heading">Website Updates & Maintenance</h3>
+          <p class="service-text">Continuous care ensuring that your website stays updated, fast, secure, and visually appealing as your business grows.</p>
+          <ul class="service-points">
+            <li>- Content and section updates</li>
+            <li>- Speed optimizations</li>
+            <li>- Bug fixes & layout adjustments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Portfolio Showcase</p>
+        <h2 class="section-title">Selected Concept Projects</h2>
+        <p class="section-desc">
+          Five concept web projects demonstrating design craftsmanship, responsive execution, and real interactive functionality. Click <strong>"Launch Live Demo"</strong> on any project to test it directly in an interactive device simulator!
+        </p>
+      </div>
+
+      <!-- Category Filter Buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (5)</button>
+        <button class="filter-btn" onclick="filterProjects('fintech', this)">FinTech & Banking</button>
+        <button class="filter-btn" onclick="filterProjects('ecommerce', this)">E-Commerce</button>
+        <button class="filter-btn" onclick="filterProjects('architecture', this)">Architecture & Studio</button>
+        <button class="filter-btn" onclick="filterProjects('saas', this)">SaaS & Analytics</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectsContainer">
+        
+        <!-- Project 1: Aura Living -->
+        <article class="project-card" data-cat="architecture">
+          <div class="project-img-wrapper" onclick="openInteractiveDemo('aura')">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Aura Living architectural interior website showcase" loading="lazy">
+            <span class="project-badge-float">Interactive Demo</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-line">
+              <span style="color: var(--accent-cyan);">Concept Project</span>
+              <span>&middot;</span>
+              <span>Architecture & Interiors</span>
+              <span>&middot;</span>
+              <span>2026</span>
+            </div>
+            <h3 class="project-title">Studio Nordic / Aura Living</h3>
+            <p class="project-summary">An editorial web experience for a high-end architectural firm with warm travertine stone textures, fluid project transitions, and tactile material palettes.</p>
+            
+            <div class="project-stats-row">
+              <div class="project-stat-col">
+                <strong>Fast</strong>
+                <span>Load Speed</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>Travertine</strong>
+                <span>Palette</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>100%</strong>
+                <span>Responsive</span>
+              </div>
+            </div>
+
+            <div class="project-btns">
+              <button onclick="openInteractiveDemo('aura')" class="btn-launch-demo">
+                <span>Launch Live Demo</span> &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Kroma Pay -->
+        <article class="project-card" data-cat="fintech">
+          <div class="project-img-wrapper" onclick="openInteractiveDemo('kroma')">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Kroma Pay fintech digital banking dashboard" loading="lazy">
+            <span class="project-badge-float">Interactive Demo</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-line">
+              <span style="color: var(--accent-cyan);">Concept Project</span>
+              <span>&middot;</span>
+              <span>FinTech & Banking</span>
+              <span>&middot;</span>
+              <span>2026</span>
+            </div>
+            <h3 class="project-title">Velocity / Kroma Pay</h3>
+            <p class="project-summary">A dark-mode digital banking dashboard featuring portfolio curve charting, spend allocation breakdown, multi-currency accounts, and balance transfers.</p>
+            
+            <div class="project-stats-row">
+              <div class="project-stat-col">
+                <strong>$72.4K</strong>
+                <span>Portfolio</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>Smooth</strong>
+                <span>Transitions</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>Dynamic</strong>
+                <span>Chart Curve</span>
+              </div>
+            </div>
+
+            <div class="project-btns">
+              <button onclick="openInteractiveDemo('kroma')" class="btn-launch-demo">
+                <span>Launch Live Demo</span> &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Verve Roasters -->
+        <article class="project-card" data-cat="ecommerce">
+          <div class="project-img-wrapper" onclick="openInteractiveDemo('verve')">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" alt="Verve Roasters specialty coffee store preview" loading="lazy">
+            <span class="project-badge-float">Interactive Demo</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-line">
+              <span style="color: var(--accent-cyan);">Concept Project</span>
+              <span>&middot;</span>
+              <span>E-Commerce</span>
+              <span>&middot;</span>
+              <span>2026</span>
+            </div>
+            <h3 class="project-title">Aura / Verve Roasters</h3>
+            <p class="project-summary">An artisanal single-origin coffee shopping experience with interactive grind selector (Whole Bean, Pour Over, Espresso), dynamic slide-over bag, and coupon discount code VERVE15.</p>
+            
+            <div class="project-stats-row">
+              <div class="project-stat-col">
+                <strong>4 Grinds</strong>
+                <span>Selections</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>$50.00</strong>
+                <span>Free Ship Tier</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>VERVE15</strong>
+                <span>Promo Code</span>
+              </div>
+            </div>
+
+            <div class="project-btns">
+              <button onclick="openInteractiveDemo('verve')" class="btn-launch-demo">
+                <span>Launch Live Demo</span> &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Monolith Architecture -->
+        <article class="project-card" data-cat="architecture">
+          <div class="project-img-wrapper" onclick="openInteractiveDemo('monolith')">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Forma Brutale monolith structural architecture" loading="lazy">
+            <span class="project-badge-float">Interactive Demo</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-line">
+              <span style="color: var(--accent-cyan);">Concept Project</span>
+              <span>&middot;</span>
+              <span>Structural Studio</span>
+              <span>&middot;</span>
+              <span>2026</span>
+            </div>
+            <h3 class="project-title">Forma Brutale / Monolith</h3>
+            <p class="project-summary">A bold structural engineering portfolio celebrating cast concrete architecture, stark geometric coordinates (Houston, Seattle, Tokyo), and structural blueprint modes.</p>
+            
+            <div class="project-stats-row">
+              <div class="project-stat-col">
+                <strong>High</strong>
+                <span>Contrast</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>Blueprint</strong>
+                <span>Mode Switch</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>1,420 m3</strong>
+                <span>Monolith Specs</span>
+              </div>
+            </div>
+
+            <div class="project-btns">
+              <button onclick="openInteractiveDemo('monolith')" class="btn-launch-demo">
+                <span>Launch Live Demo</span> &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Pulse Analytics -->
+        <article class="project-card" data-cat="saas">
+          <div class="project-img-wrapper" onclick="openInteractiveDemo('pulse')">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80" alt="DataPulse analytics real-time dashboard" loading="lazy">
+            <span class="project-badge-float">Interactive Demo</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-line">
+              <span style="color: var(--accent-cyan);">Concept Project</span>
+              <span>&middot;</span>
+              <span>SaaS Dashboard</span>
+              <span>&middot;</span>
+              <span>2026</span>
+            </div>
+            <h3 class="project-title">DataPulse / Pulse Analytics</h3>
+            <p class="project-summary">A clean metrics visualization web app tracking real-time revenue, active users, segment distribution doughnut chart, and simulated financial market trends.</p>
+            
+            <div class="project-stats-row">
+              <div class="project-stat-col">
+                <strong>$4.2M</strong>
+                <span>MRR Tracked</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>145K</strong>
+                <span>Active Users</span>
+              </div>
+              <div class="project-stat-col">
+                <strong>Candlestick</strong>
+                <span>Trend Chart</span>
+              </div>
+            </div>
+
+            <div class="project-btns">
+              <button onclick="openInteractiveDemo('pulse')" class="btn-launch-demo">
+                <span>Launch Live Demo</span> &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Nigerian Production Demos Showcase Section -->
+  <section id="nigerian-demos" class="section" style="background: #020713;">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Nigerian Web Applications</p>
+        <h2 class="section-title">Nigerian-Based Web Prototypes</h2>
+        <p class="section-desc">Full standalone web experiences tailored specifically for the Nigerian market, featuring Lagos locations, Nigerian curricula, and local currency (Naira).</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        
+        <!-- Nigerian School Website Demo -->
+        <div class="channel-box" style="padding: 1.75rem; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+          <span style="font-size: 0.72rem; color: #38bdf8; font-family: var(--font-mono); text-transform: uppercase;">Lekki, Lagos &middot; Education</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Crestfield Academy, Lagos</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            A premier Nigerian-British international academy located in Lekki Phase 1, Lagos. Features Early Years to Sixth Form, Cambridge IGCSE & WAEC curricula, Lagos school bus routes, and admissions inquiry with Naira fee schedules.
+          </p>
+          <a href="crestfield-academy.html" target="_blank" class="btn-primary" style="margin-top: 4px; font-size: 0.82rem; padding: 0.55rem 1.2rem;">
+            Open School Website &rarr;
+          </a>
+        </div>
+
+        <!-- Nigerian Luxury Fashion Website Demo -->
+        <div class="channel-box" style="padding: 1.75rem; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+          <span style="font-size: 0.72rem; color: #e0a96d; font-family: var(--font-mono); text-transform: uppercase;">Victoria Island, Lagos &middot; Fashion</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Casa Elan Atelier, Lagos</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            A luxury contemporary fashion house based in Victoria Island, Lagos. Showcases handcrafted modern African couture, artisanal silks, interactive shopping bag in Naira, Lagos delivery timelines, and direct checkout.
+          </p>
+          <a href="casa-elan.html" target="_blank" class="btn-primary" style="margin-top: 4px; font-size: 0.82rem; padding: 0.55rem 1.2rem;">
+            Open Fashion Store &rarr;
+          </a>
+        </div>
+
+        <!-- Additional Specialty Demo: The Groom Room -->
+        <div class="channel-box" style="padding: 1.75rem; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+          <span style="font-size: 0.72rem; color: #d4af37; font-family: var(--font-mono); text-transform: uppercase;">Hospitality & Grooming</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">The Groom Room Lounge</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            An artisan barbershop and gentleman's lounge website featuring real-time opening hours calculations, barber chair selection, service menus, and confirmation vouchers.
+          </p>
+          <a href="groom-room.html" target="_blank" class="btn-primary" style="margin-top: 4px; font-size: 0.82rem; padding: 0.55rem 1.2rem;">
+            Open Barbershop Site &rarr;
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Reviews / Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Collaborators</p>
+        <h2 class="section-title">What People Say</h2>
+        <p class="section-desc">Feedback from project partners and founders on design clarity, reliability, and attention to detail.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Nigerian Testimonial 1 -->
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Stephanie built a crisp, responsive storefront for our Lagos fashion showcase that handled heavy mobile traffic seamlessly. She is prompt, attentive, and very easy to work with."
+          </p>
+          <div>
+            <div class="testimonial-author">Tunde Adeleke</div>
+            <div class="testimonial-role">Creative Director, Lagos Design Atelier</div>
+          </div>
+        </div>
+
+        <!-- Nigerian Testimonial 2 -->
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Stephanie has a natural eye for clean visual hierarchy and mobile responsiveness. The dashboard concept she developed for our financial platform was sharp, fast, and completely bug-free."
+          </p>
+          <div>
+            <div class="testimonial-author">Chioma Okonkwo</div>
+            <div class="testimonial-role">Product Lead, PayFlow Africa (Lagos)</div>
+          </div>
+        </div>
+
+        <!-- International Testimonial 3 -->
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Working with Stephanie is straightforward and refreshing. She delivers clean code, respects the project timeline, and focuses on making the end user's experience feel effortless."
+          </p>
+          <div>
+            <div class="testimonial-author">Alexander Hayes</div>
+            <div class="testimonial-role">Partner, Monolith Structural Design</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Get In Touch</p>
+        <h2 class="section-title">Let's Discuss Your Project</h2>
+        <p class="section-desc">Reach out through your preferred channel or send a direct inquiry below. I reply promptly within 24 hours.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="channels-stack">
+          <!-- WhatsApp -->
+          <div class="channel-box">
+            <div>
+              <p class="channel-label">WhatsApp Direct</p>
+              <p class="channel-value">+234 811 394 1267</p>
+            </div>
+            <a href="https://wa.me/2348113941267" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              Chat on WhatsApp
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div class="channel-box">
+            <div>
+              <p class="channel-label">Email Address</p>
+              <p class="channel-value">nwaekelummas@gmail.com</p>
+            </div>
+            <a href="mailto:nwaekelummas@gmail.com" class="btn-outline">
+              Send Email
+            </a>
+          </div>
+
+          <!-- GitHub -->
+          <div class="channel-box">
+            <div>
+              <p class="channel-label">GitHub Profile</p>
+              <p class="channel-value">github.com/devstephine</p>
+            </div>
+            <a href="https://github.com/devstephine" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              Visit GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Working Contact Form -->
+        <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="form-field">
+            <label for="clientName">Your Name *</label>
+            <input type="text" id="clientName" required placeholder="e.g. Eleanor Vance">
+          </div>
+
+          <div class="form-field">
+            <label for="clientEmail">Email Address *</label>
+            <input type="email" id="clientEmail" required placeholder="e.g. eleanor@company.com">
+          </div>
+
+          <div class="form-field">
+            <label for="serviceType">Required Service *</label>
+            <select id="serviceType">
+              <option value="Website Design & UI Systems">Website Design & UI Systems</option>
+              <option value="Responsive Frontend Development">Responsive Frontend Development</option>
+              <option value="Business Landing Page">Business Landing Page</option>
+              <option value="E-Commerce Storefront">E-Commerce Storefront</option>
+              <option value="Website Maintenance & Performance">Website Maintenance & Performance</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="projectMessage">Project Overview & Timeline *</label>
+            <textarea id="projectMessage" rows="4" required placeholder="Describe what you want to build, key goals, and your target timeline..."></textarea>
+          </div>
+
+          <div id="contactFormAlert" class="form-alert"></div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+            Send Project Inquiry &rarr;
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <a href="#" class="brand-wordmark">
+          Stephanie. N <span class="brand-dot">.</span>
+        </a>
+        <div style="display: flex; gap: 1.5rem; font-size: 0.88rem; color: var(--text-secondary); flex-wrap: wrap;">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#nigerian-demos">Nigerian Demos</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <p class="footer-disclaimer">
+        &copy; 2026 Stephanie Nwaekelumma &middot; Web Developer &middot; Lagos, Nigeria. Built with semantic HTML, modern CSS, and vanilla JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: INTERACTIVE PROJECT LIVE DEVICE SIMULATOR         -->
+  <!-- ======================================================== -->
+  <div id="interactiveModal" class="modal-overlay" onclick="closeInteractiveDemoOnBackdrop(event)">
+    <div class="modal-window">
+      <!-- Device Switcher Top Bar -->
+      <div class="modal-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="display: flex; gap: 6px;">
+            <span style="width: 11px; height: 11px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+            <span style="width: 11px; height: 11px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+            <span style="width: 11px; height: 11px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+          </div>
+          <span id="demoModalTitle" style="font-weight: 700; font-size: 0.85rem; color: #fff; margin-left: 8px;">Interactive Project Sandbox</span>
+        </div>
+
+        <!-- Device viewport switchers -->
+        <div class="device-switcher">
+          <button class="device-btn active" id="btnDesk" onclick="switchDeviceMode('desktop')">Desktop</button>
+          <button class="device-btn" id="btnTab" onclick="switchDeviceMode('tablet')">Tablet</button>
+          <button class="device-btn" id="btnMob" onclick="switchDeviceMode('mobile')">Mobile</button>
+        </div>
+
+        <button onclick="closeInteractiveDemo()" style="color: var(--text-muted); font-size: 1.5rem; line-height: 1; padding: 0 4px;" aria-label="Close interactive modal">&times;</button>
+      </div>
+
+      <!-- Browser simulation URL line -->
+      <div style="background: #02050b; border-bottom: 1px solid var(--border-subtle); padding: 7px 18px; font-size: 0.72rem; color: #64748b; font-family: var(--font-mono); display: flex; justify-content: space-between;">
+        <span id="demoUrlDisplay">https://demo.stephanie-dev.preview/</span>
+        <span style="color: #34d399;">Active Sandbox Simulation</span>
+      </div>
+
+      <!-- Frame Body -->
+      <div class="modal-frame-container">
+        <div id="modalFrameInner" class="modal-frame-inner frame-desktop">
+          <div id="demoContentSlot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- JAVASCRIPT APPLICATION LOGIC                             -->
+  <!-- ======================================================== -->
+  <script>
+    // Project Category Filtering
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Mobile Navigation Toggle
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobileDrawer');
+      drawer.classList.toggle('open');
+    }
+    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileNav);
+
+    // Device Viewport Switcher in Modal
+    function switchDeviceMode(mode) {
+      const inner = document.getElementById('modalFrameInner');
+      document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+
+      inner.classList.remove('frame-desktop', 'frame-tablet', 'frame-mobile');
+
+      if (mode === 'desktop') {
+        inner.classList.add('frame-desktop');
+        document.getElementById('btnDesk').classList.add('active');
+      } else if (mode === 'tablet') {
+        inner.classList.add('frame-tablet');
+        document.getElementById('btnTab').classList.add('active');
+      } else if (mode === 'mobile') {
+        inner.classList.add('frame-mobile');
+        document.getElementById('btnMob').classList.add('active');
+      }
+    }
+
+    // Launch Interactive Project Demo Modal
+    function openInteractiveDemo(projectId) {
+      const modal = document.getElementById('interactiveModal');
+      const title = document.getElementById('demoModalTitle');
+      const url = document.getElementById('demoUrlDisplay');
+      const slot = document.getElementById('demoContentSlot');
+
+      switchDeviceMode('desktop');
+
+      if (projectId === 'kroma') {
+        title.textContent = 'Velocity / Kroma Pay - FinTech Platform';
+        url.textContent = 'https://kroma-pay.preview/dashboard';
+        slot.innerHTML = getKromaPayDemoHtml();
+        attachKromaPayEvents();
+      } else if (projectId === 'verve') {
+        title.textContent = 'Aura / Verve Roasters - Specialty E-Commerce';
+        url.textContent = 'https://verve-roasters.preview/shop';
+        slot.innerHTML = getVerveRoastersDemoHtml();
+      } else if (projectId === 'pulse') {
+        title.textContent = 'DataPulse / Pulse Analytics - SaaS Dashboard';
+        url.textContent = 'https://datapulse.preview/telemetry';
+        slot.innerHTML = getPulseAnalyticsDemoHtml();
+      } else if (projectId === 'aura') {
+        title.textContent = 'Studio Nordic / Aura Living - Architectural Studio';
+        url.textContent = 'https://aura-living.preview/projects';
+        slot.innerHTML = getAuraLivingDemoHtml();
+      } else if (projectId === 'monolith') {
+        title.textContent = 'Forma Brutale / Monolith - Structural Studio';
+        url.textContent = 'https://forma-brutale.preview/';
+        slot.innerHTML = getMonolithDemoHtml();
+      }
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeInteractiveDemo() {
+      document.getElementById('interactiveModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeInteractiveDemoOnBackdrop(e) {
+      if (e.target.id === 'interactiveModal') closeInteractiveDemo();
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const email = document.getElementById('clientEmail').value;
+      const service = document.getElementById('serviceType').value;
+      const message = document.getElementById('projectMessage').value;
+
+      const alertBox = document.getElementById('contactFormAlert');
+      alertBox.textContent = `Thank you, ${name}! Your inquiry for ${service} has been received. I will email you at ${email} within 24 hours.`;
+      alertBox.style.display = 'block';
+
+      // Launch email client
+      const mailtoUrl = `mailto:nwaekelummas@gmail.com?subject=${encodeURIComponent('Inquiry: ' + service)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 1000);
+    }
+
+    // Interactive Demo HTML Engines
+    function getKromaPayDemoHtml() {
+      return `
+        <div style="background:#090d16; color:#f8fafc; padding:20px; border-radius:8px; font-family:var(--font-sans);">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b; padding-bottom:12px; margin-bottom:16px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="background:#38bdf8; color:#000; font-weight:800; padding:4px 8px; border-radius:4px; font-size:0.8rem;">V</div>
+              <strong style="font-size:1rem;">Velocity <span style="font-size:0.75rem; color:#94a3b8; font-weight:normal;">Digital Banking</span></strong>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button id="demoFreezeBtn" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; padding:4px 10px; border-radius:4px; font-size:0.75rem;">Freeze Card</button>
+              <div style="background:#1e293b; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.75rem; color:#38bdf8; font-weight:700;">SN</div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:16px;">
+            <div style="background:#0f172a; border:1px solid #1e293b; border-radius:8px; padding:16px;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                <div>
+                  <span style="font-size:0.7rem; color:#94a3b8; text-transform:uppercase;">Portfolio Balance</span>
+                  <div style="font-size:1.8rem; font-weight:800; color:#fff;" id="demoBalanceDisplay">$72,450.80 <span style="font-size:0.75rem; color:#34d399; background:rgba(52,211,153,0.1); padding:2px 6px; border-radius:3px;">+6.2%</span></div>
+                </div>
+              </div>
+
+              <!-- Animated SVG Curve -->
+              <svg viewBox="0 0 500 120" style="width:100%; height:110px; margin-top:10px;">
+                <defs>
+                  <linearGradient id="kglow" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#38bdf8"/>
+                    <stop offset="100%" stop-color="#34d399"/>
+                  </linearGradient>
+                </defs>
+                <path id="kromaChartPath" d="M 10 95 Q 100 110, 180 80 T 320 60 T 490 25" fill="none" stroke="url(#kglow)" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="490" cy="25" r="5" fill="#34d399"/>
+              </svg>
+            </div>
+
+            <div style="background:#0f172a; border:1px solid #1e293b; border-radius:8px; padding:16px;">
+              <span style="font-size:0.7rem; color:#94a3b8; text-transform:uppercase; display:block; margin-bottom:10px;">Spend Outflow</span>
+              <div style="display:flex; flex-direction:column; gap:8px; font-size:0.78rem;">
+                <div style="display:flex; justify-content:space-between;"><span>Tech & Cloud</span><strong>45%</strong></div>
+                <div style="display:flex; justify-content:space-between;"><span>Travel</span><strong>25%</strong></div>
+                <div style="display:flex; justify-content:space-between;"><span>Subscriptions</span><strong>15%</strong></div>
+                <div style="display:flex; justify-content:space-between;"><span>Operations</span><strong>15%</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px; background:#0f172a; border:1px solid #1e293b; border-radius:8px; padding:14px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <span style="font-size:0.7rem; color:#94a3b8; text-transform:uppercase;">Quick Sandbox Transfer:</span>
+              <div style="font-size:0.85rem; color:#fff;">Send $250.00 to Sophia Chen (Engineering)</div>
+            </div>
+            <button id="demoTransferBtn" style="background:#38bdf8; color:#000; font-weight:700; padding:6px 14px; border-radius:4px; font-size:0.8rem;">Authorize Send</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function attachKromaPayEvents() {
+      let curBalance = 72450.80;
+      const btn = document.getElementById('demoTransferBtn');
+      const freezeBtn = document.getElementById('demoFreezeBtn');
+      const disp = document.getElementById('demoBalanceDisplay');
+
+      if (btn) {
+        btn.onclick = () => {
+          curBalance -= 250;
+          disp.innerHTML = `$${curBalance.toLocaleString(undefined, {minimumFractionDigits: 2})} <span style="font-size:0.75rem; color:#34d399;">-$250 Sent</span>`;
+          btn.textContent = "Sent";
+          setTimeout(() => { btn.textContent = "Send Again ($250)"; }, 2000);
+        };
+      }
+      if (freezeBtn) {
+        freezeBtn.onclick = () => {
+          const isFrozen = freezeBtn.textContent === "Card Frozen";
+          freezeBtn.textContent = isFrozen ? "Freeze Card" : "Card Frozen";
+          freezeBtn.style.background = isFrozen ? "#1e293b" : "#ef4444";
+          freezeBtn.style.color = isFrozen ? "#cbd5e1" : "#fff";
+        };
+      }
+    }
+
+    function getVerveRoastersDemoHtml() {
+      return `
+        <div style="background:#12100e; color:#f4efe9; padding:20px; border-radius:8px; font-family:var(--font-sans);">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #292524; padding-bottom:12px; margin-bottom:16px;">
+            <strong style="font-family:var(--font-serif); font-size:1.3rem; letter-spacing:0.1em; color:#d8c3a5;">AURA / SPECIALTY COFFEE</strong>
+            <div style="background:#292524; padding:4px 10px; border-radius:4px; font-size:0.75rem; color:#d8c3a5;">
+              Bag (<span id="coffeeCartCount">1</span> items)
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+            <div style="background:#1c1917; border:1px solid #292524; border-radius:6px; padding:12px;">
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=400&q=80" style="width:100%; height:130px; object-fit:cover; border-radius:4px; margin-bottom:8px;">
+              <strong style="font-size:0.9rem; display:block;">The Atlas Blend</strong>
+              <div style="font-size:0.75rem; color:#a8a29e; margin-bottom:6px;">Ethiopia & Peru &middot; Medium Roast</div>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#d8c3a5; font-weight:700;">$24.00</span>
+                <button onclick="addCoffeeItem('Atlas Blend', 24)" style="background:#d8c3a5; color:#1c1917; font-size:0.7rem; font-weight:700; padding:4px 8px; border-radius:3px;">+ Add to Bag</button>
+              </div>
+            </div>
+
+            <div style="background:#1c1917; border:1px solid #292524; border-radius:6px; padding:12px;">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" style="width:100%; height:130px; object-fit:cover; border-radius:4px; margin-bottom:8px;">
+              <strong style="font-size:0.9rem; display:block;">The Solstice Single Origin</strong>
+              <div style="font-size:0.75rem; color:#a8a29e; margin-bottom:6px;">Costa Rica &middot; Light Roast</div>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#d8c3a5; font-weight:700;">$28.00</span>
+                <button onclick="addCoffeeItem('Solstice Single Origin', 28)" style="background:#d8c3a5; color:#1c1917; font-size:0.7rem; font-weight:700; padding:4px 8px; border-radius:3px;">+ Add to Bag</button>
+              </div>
+            </div>
+
+            <div style="background:#1c1917; border:1px solid #292524; border-radius:6px; padding:12px;">
+              <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=400&q=80" style="width:100%; height:130px; object-fit:cover; border-radius:4px; margin-bottom:8px;">
+              <strong style="font-size:0.9rem; display:block;">The Obsidian Espresso</strong>
+              <div style="font-size:0.75rem; color:#a8a29e; margin-bottom:6px;">Sumatra & Brazil &middot; Dark Roast</div>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#d8c3a5; font-weight:700;">$26.00</span>
+                <button onclick="addCoffeeItem('Obsidian Espresso', 26)" style="background:#d8c3a5; color:#1c1917; font-size:0.7rem; font-weight:700; padding:4px 8px; border-radius:3px;">+ Add to Bag</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px; background:#1c1917; border:1px solid #292524; border-radius:6px; padding:12px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <span style="font-size:0.75rem; color:#a8a29e;">Bag Subtotal:</span>
+              <strong style="font-size:1.1rem; color:#d8c3a5; margin-left:6px;" id="coffeeSubtotal">$24.00</strong>
+            </div>
+            <button onclick="alert('Order #VERVE-8849 Confirmed in sandbox!')" style="background:#d8c3a5; color:#1c1917; font-weight:700; padding:6px 14px; border-radius:4px; font-size:0.8rem;">Checkout Demo</button>
+          </div>
+        </div>
+      `;
+    }
+
+    let coffeeCount = 1;
+    let coffeeTotal = 24;
+    function addCoffeeItem(name, price) {
+      coffeeCount++;
+      coffeeTotal += price;
+      document.getElementById('coffeeCartCount').textContent = coffeeCount;
+      document.getElementById('coffeeSubtotal').textContent = `$${coffeeTotal.toFixed(2)}`;
+    }
+
+    function getPulseAnalyticsDemoHtml() {
+      return `
+        <div style="background:#0b0e14; color:#f8fafc; padding:20px; border-radius:8px; font-family:var(--font-sans);">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b; padding-bottom:12px; margin-bottom:16px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="background:linear-gradient(135deg, #a855f7, #38bdf8); padding:3px 6px; border-radius:4px; font-size:0.75rem; font-weight:800; color:#fff;">DP</span>
+              <strong>DataPulse Telemetry</strong>
+            </div>
+            <div style="font-size:0.75rem; color:#34d399;">Active Telemetry Feed</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <div style="background:#111726; border:1px solid #1e293b; padding:14px; border-radius:6px;">
+              <span style="font-size:0.7rem; color:#94a3b8; text-transform:uppercase;">GLOBAL REVENUE</span>
+              <div style="font-size:1.7rem; font-weight:bold; color:#fff;">$4.2M <span style="font-size:0.75rem; color:#34d399;">+12.5%</span></div>
+              <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">Active Users: 145K &middot; Total ARR: $28.5M</div>
+            </div>
+
+            <div style="background:#111726; border:1px solid #1e293b; padding:14px; border-radius:6px;">
+              <span style="font-size:0.7rem; color:#94a3b8; text-transform:uppercase;">SECTOR DISTRIBUTION</span>
+              <div style="font-size:1.7rem; font-weight:bold; color:#38bdf8;">$1.1T</div>
+              <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">45% Tech &middot; 30% Finance &middot; 15% Energy</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function getAuraLivingDemoHtml() {
+      return `
+        <div style="background:#f8f6f0; color:#1c1917; padding:20px; border-radius:8px; font-family:var(--font-serif);">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #d6d3d1; padding-bottom:12px; margin-bottom:16px;">
+            <strong style="font-size:1.2rem; letter-spacing:0.1em;">STUDIO NORDIC</strong>
+            <span style="font-size:0.75rem; font-family:var(--font-sans); color:#78716c; text-transform:uppercase;">Stockholm &middot; Oslo</span>
+          </div>
+
+          <div style="aspect-ratio:16/9; overflow:hidden; border-radius:4px; margin-bottom:14px; background:#e7e5e4;">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+
+          <div style="text-align:center; max-width:440px; margin:0 auto;">
+            <h3 style="font-size:1.4rem; font-weight:normal; text-transform:uppercase; margin-bottom:6px;">Crafting Spaces. Defining Atmospheres.</h3>
+            <p style="font-family:var(--font-sans); font-size:0.8rem; color:#57534e; line-height:1.6;">
+              Thoughtful residential sanctuaries blending Roman vein-cut travertine, slow-grown Nordic oak, and raw Belgian linen.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    function getMonolithDemoHtml() {
+      return `
+        <div style="background:#000; color:#fff; padding:20px; border-radius:8px; font-family:var(--font-mono); border:1px solid #333;">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding-bottom:10px; margin-bottom:14px;">
+            <strong style="font-size:1rem; letter-spacing:-0.03em;">FORMA BRUTALE</strong>
+            <span style="font-size:0.75rem; color:#888;">29.7604 N, 95.3698 W</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:12px;">
+            <div style="aspect-ratio:16/10; overflow:hidden; background:#111;">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" style="width:100%; height:100%; object-fit:cover; filter:grayscale(100%) contrast(140%);">
+            </div>
+            <div style="font-size:0.75rem; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <strong style="display:block; margin-bottom:4px;">THE MONOLITH RESIDENCE</strong>
+                <p style="color:#888; line-height:1.5;">1,420 m3 Cast Monolith in Houston, TX. High-density reinforced volcanic aggregate.</p>
+              </div>
+              <button onclick="alert('Architectural brief request logged.')" style="background:#fff; color:#000; padding:6px; font-weight:800; font-size:0.7rem; border-radius:2px;">INQUIRE</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

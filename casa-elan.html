@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Elan Lagos - Luxury Fashion Atelier</title>
+  <meta name="description" content="Casa Elan Lagos is a contemporary Nigerian luxury fashion house in Victoria Island, showcasing bespoke tailoring, artisanal silks, and modern African silhouettes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF9F6;
+      --bg-surface: #FFFFFF;
+      --text-main: #1C1917;
+      --text-muted: #78716C;
+      --border-subtle: #E7E5E0;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); background: var(--bg-cream); color: var(--text-main); line-height: 1.6; }
+    h1, h2, h3, .font-serif { font-family: var(--font-serif); }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .demo-bar {
+      background: #1c1917;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 7px 16px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .demo-pill { background: #059669; color: #fff; padding: 2px 6px; font-weight: 700; font-size: 0.65rem; border-radius: 2px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 249, 246, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-container { max-width: 1300px; margin: 0 auto; padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand-wordmark { font-size: 1.8rem; font-weight: 600; letter-spacing: -0.02em; }
+    .brand-wordmark span { font-size: 0.72rem; font-family: var(--font-sans); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(to right, rgba(18,18,18,0.92) 0%, rgba(18,18,18,0.4) 100%),
+                  url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 4rem 2rem;
+    }
+    .hero-content { max-width: 1300px; margin: 0 auto; width: 100%; }
+    .hero-title { font-size: clamp(2.5rem, 5vw, 4.2rem); max-width: 22ch; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 400; }
+    .btn-white { background: #FAF9F6; color: #1C1917; padding: 0.85rem 2rem; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.08em; display: inline-block; }
+
+    /* Catalog */
+    .catalog { max-width: 1300px; margin: 0 auto; padding: 4.5rem 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 2rem; }
+    .card { cursor: pointer; }
+    .card-img-wrap { aspect-ratio: 3/4; overflow: hidden; background: #eee; margin-bottom: 1rem; position: relative; }
+    .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .card:hover .card-img { transform: scale(1.04); }
+    .card-title { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.2rem; }
+    .card-price { font-weight: 700; font-size: 1rem; color: #047857; }
+
+    /* Bag Drawer */
+    .drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; display: none; }
+    .drawer-overlay.open { display: block; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: 100%; max-width: 440px; background: #fff; z-index: 110; transform: translateX(100%); transition: transform 0.3s ease; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .drawer.open { transform: translateX(0); }
+
+    footer { background: #141211; color: #78716c; padding: 3rem 2rem; text-align: center; font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+
+  <aside class="demo-bar">
+    <span class="demo-pill">LAGOS ATELIER</span>
+    <span>Casa Elan Lagos &middot; Victoria Island Showroom &middot; Nationwide Nigeria Delivery</span>
+    <a href="index.html" style="color:#fff; text-decoration:underline; margin-left:8px;">Back to Portfolio</a>
+  </aside>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-wordmark font-serif">
+        Casa Elan
+        <span>Victoria Island, Lagos</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#collection">Lagos Collection</a></li>
+        <li><a href="index.html">Portfolio Home</a></li>
+      </ul>
+      <button onclick="toggleBag(true)" style="font-weight: 600; font-size: 0.85rem; text-transform: uppercase;">
+        Shopping Bag (<span id="cartCount">1</span>)
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span style="text-transform:uppercase; letter-spacing:0.2em; font-size:0.75rem; color:#d6d3d1; display:block; margin-bottom:1rem;">Harmattan / Summer 2026 Collection</span>
+      <h1 class="hero-title font-serif">Contemporary African Silhouettes & Bespoke Tailoring</h1>
+      <a href="#collection" class="btn-white">Explore Lagos Collection</a>
+    </div>
+  </section>
+
+  <section class="catalog" id="collection">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:2rem; flex-wrap:wrap;">
+      <div>
+        <h2 class="font-serif" style="font-size: 2.2rem;">The Curated Wardrobe</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Handcrafted in our Victoria Island atelier. Available for Lagos same-day dispatch and nationwide delivery.</p>
+      </div>
+      <span style="font-size:0.8rem; color:#059669; font-weight:600;">Prices in Nigerian Naira (NGN)</span>
+    </div>
+
+    <div class="grid">
+      <div class="card" onclick="addToBag('Atelier Structured Crepe Blazer', 385000)">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80" alt="Crepe Blazer" class="card-img">
+        </div>
+        <h3 class="card-title font-serif">Atelier Structured Crepe Blazer</h3>
+        <div class="card-price">&#8358;385,000</div>
+      </div>
+
+      <div class="card" onclick="addToBag('Oshodi Silk Charmeuse Bias Dress', 290000)">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=600&q=80" alt="Silk Dress" class="card-img">
+        </div>
+        <h3 class="card-title font-serif">Oshodi Silk Charmeuse Bias Dress</h3>
+        <div class="card-price">&#8358;290,000</div>
+      </div>
+
+      <div class="card" onclick="addToBag('Palais Pleated Linen Trousers', 175000)">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Trousers" class="card-img">
+        </div>
+        <h3 class="card-title font-serif">Palais Pleated Linen Trousers</h3>
+        <div class="card-price">&#8358;175,000</div>
+      </div>
+
+      <div class="card" onclick="addToBag('Handcrafted Lekki Leather Tote', 245000)">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80" alt="Leather Tote" class="card-img">
+        </div>
+        <h3 class="card-title font-serif">Handcrafted Lekki Leather Tote</h3>
+        <div class="card-price">&#8358;245,000</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-Over Shopping Bag -->
+  <div class="drawer-overlay" id="bagOverlay" onclick="toggleBag(false)"></div>
+  <aside class="drawer" id="bagDrawer">
+    <div>
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:1rem; margin-bottom:1.5rem;">
+        <h3 class="font-serif" style="font-size:1.4rem;">Your Shopping Bag</h3>
+        <button onclick="toggleBag(false)" style="font-size:1.5rem;">&times;</button>
+      </div>
+
+      <div id="cartItemsList" style="display:flex; flex-direction:column; gap:1rem; max-height:50vh; overflow-y:auto;">
+        <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem;">
+          <div>
+            <strong style="display:block;">Atelier Structured Crepe Blazer</strong>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Size: 10 (UK) &middot; Sandstone</span>
+          </div>
+          <span style="font-weight:700; color:#047857;">&#8358;385,000</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:700; border-top:1px solid var(--border-subtle); padding-top:1rem; margin-bottom:1rem;">
+        <span>Total (Lagos Dispatch)</span>
+        <span id="bagTotal" style="color:#047857;">&#8358;385,000</span>
+      </div>
+      <button onclick="alert('Order Confirmed for Lagos Dispatch! Reference: #LAG-9042')" style="width:100%; background:#1c1917; color:#fff; padding:1rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; font-size:0.85rem;">
+        Complete Order (Sandbox Checkout)
+      </button>
+    </div>
+  </aside>
+
+  <footer>
+    <p>&copy; 2026 Casa Elan Atelier Lagos. Showroom: 14 Akin Adesola St, Victoria Island, Lagos, Nigeria. Designed & Developed by Stephanie N.</p>
+  </footer>
+
+  <script>
+    let count = 1;
+    let total = 385000;
+    function toggleBag(open) {
+      document.getElementById('bagOverlay').classList.toggle('open', open);
+      document.getElementById('bagDrawer').classList.toggle('open', open);
+    }
+    function addToBag(title, price) {
+      count++;
+      total += price;
+      document.getElementById('cartCount').textContent = count;
+      document.getElementById('bagTotal').textContent = '₦' + total.toLocaleString();
+
+      const item = document.createElement('div');
+      item.style.cssText = 'display:flex; justify-content:space-between; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem;';
+      item.innerHTML = '<div><strong style="display:block;">' + title + '</strong><span style="font-size:0.75rem; color:var(--text-muted);">Size: 10 (UK) &middot; Atelier</span></div><span style="font-weight:700; color:#047857;">₦' + price.toLocaleString() + '</span>';
+      document.getElementById('cartItemsList').appendChild(item);
+      toggleBag(true);
+    }
+  </script>
+</body>
+</html>

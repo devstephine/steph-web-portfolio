@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crestfield International Academy - Lekki, Lagos</title>
+  <meta name="description" content="Official website for Crestfield International Academy, a premier British-Nigerian co-educational day and boarding school in Lekki Phase 1, Lagos.">
+  <meta property="og:title" content="Crestfield International Academy - Lekki, Lagos">
+  <meta property="og:description" content="Empowering inquiring minds and inspiring principled leaders. Offering Cambridge IGCSE, A-Levels, and WAEC curricula in Lagos, Nigeria.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #002244;
+      --primary-light: #0d3866;
+      --accent: #b8860b;
+      --accent-light: #d4af37;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,34,68,0.08);
+      --shadow-lg: 0 12px 28px rgba(0,34,68,0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Notice Bar */
+    .demo-bar {
+      background: #00172e;
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      padding: 8px 16px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .demo-tag {
+      background: #059669;
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    /* Header & Nav */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+    }
+    .brand-crest {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: var(--accent-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.35rem;
+      border: 2px solid var(--accent);
+    }
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #334155;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-accent:hover {
+      background: #996e05;
+      transform: translateY(-1px);
+    }
+    .btn-white {
+      background: #ffffff;
+      color: var(--primary);
+    }
+    .btn-white:hover {
+      background: #f1f5f9;
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: #ffffff;
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(0, 34, 68, 0.94) 0%, rgba(0, 23, 46, 0.96) 100%),
+                  url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 96px 0 84px;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-kicker {
+      color: #facc15;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero h1 {
+      font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero-lead {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 32px;
+      max-width: 540px;
+      line-height: 1.65;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .hero-card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+    }
+    .hero-card-list li {
+      display: flex;
+      gap: 10px;
+    }
+    .hero-card-list span.marker {
+      color: #facc15;
+      font-weight: 700;
+    }
+
+    /* Stats Ribbon */
+    .stats-bar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 34px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 2.3rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .stat-item p {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+    }
+    .section-kicker {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 2.3rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -18px;
+      right: 20px;
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 22px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border-left: 4px solid var(--accent);
+    }
+    .about-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+    .about-badge-lbl {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .pillar-card {
+      background: #ffffff;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .pillar-card h4 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .pillar-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Programs Section */
+    .programs-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: #e2e8f0;
+      color: #475569;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+    .program-card {
+      display: none;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .program-card.active {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+    }
+    .program-img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+    }
+    .program-content {
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .program-age {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .program-title {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .program-desc {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+    }
+    .curriculum-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      margin-bottom: 26px;
+      font-size: 0.85rem;
+    }
+    .curriculum-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #334155;
+    }
+    .curriculum-list li::before {
+      content: "-";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Facilities Section */
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .facility-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .facility-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .facility-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .facility-body {
+      padding: 22px;
+    }
+    .facility-body h4 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .facility-body p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Gallery Section */
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: #f1f5f9;
+      color: #475569;
+      transition: all 0.15s ease;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      height: 220px;
+      background: #e2e8f0;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,34,68,0.85) 0%, transparent 60%);
+      opacity: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      transition: opacity 0.2s ease;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    .gallery-caption {
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* Admissions & Form */
+    .admissions-wrap {
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .admissions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+    }
+    .admissions-info {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 44px;
+    }
+    .admissions-info h3 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .admissions-info p {
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .step-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 30px;
+      height: 30px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    .step-text h5 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .step-text p {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+    .tuition-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    /* Form Side */
+    .inquiry-form-wrap {
+      padding: 44px;
+      background: #ffffff;
+    }
+    .inquiry-form-wrap h4 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .inquiry-form-wrap .sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 22px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: var(--text);
+      background: #f8fafc;
+      font-family: inherit;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #ffffff;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 85px;
+    }
+
+    /* FAQs Section */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .faq-header {
+      width: 100%;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .faq-icon {
+      font-size: 1.1rem;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-body {
+      display: none;
+      padding: 0 20px 18px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
+    }
+    .faq-item.active .faq-body {
+      display: block;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 23, 46, 0.85);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .lightbox-modal.open {
+      display: flex;
+    }
+    .lightbox-card {
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 800px;
+      width: 100%;
+      position: relative;
+    }
+    .lightbox-img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+    }
+    .lightbox-caption {
+      padding: 14px 18px;
+      color: #fff;
+      background: #00172e;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: #00172e;
+      color: #94a3b8;
+      padding: 64px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.82rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h4 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .footer-brand p {
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .footer-col h5 {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .admissions-grid { grid-template-columns: 1fr; }
+      .program-card.active { grid-template-columns: 1fr; }
+      .facilities-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats-grid, .form-row, .facilities-grid, .gallery-grid { grid-template-columns: 1fr; }
+      .inquiry-form-wrap, .admissions-info { padding: 26px 18px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Location Notice -->
+  <aside class="demo-bar">
+    <span class="demo-tag">LEKKI CAMPUS</span>
+    <span>Crestfield International Academy &middot; Plot 12, Admiralty Way, Lekki Phase 1, Lagos, Nigeria</span>
+    <a href="index.html" style="color:#93c5fd; text-decoration:underline; margin-left:8px;">Back to Portfolio</a>
+  </aside>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <div class="brand-crest">CA</div>
+        <div>
+          <div class="brand-title">Crestfield Academy</div>
+          <div class="brand-sub">Lekki Phase 1, Lagos</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Curriculum</a></li>
+        <li><a href="#facilities">Campus Life</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+      </ul>
+      <a href="#admissions" class="btn btn-primary">Admissions Open</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-kicker">
+            <span>&bull;</span> Co-Educational Day & Boarding School in Lekki, Lagos
+          </div>
+          <h1>Empowering Inquiring Minds, Inspiring Principled Leaders in Lagos.</h1>
+          <p class="hero-lead">
+            Delivering an integrated British-Nigerian curriculum combining Cambridge IGCSE, A-Levels, and WAEC with cutting-edge STEM laboratories, athletics, and cultural arts education.
+          </p>
+          <div class="hero-actions">
+            <a href="#admissions" class="btn btn-accent">Apply for 2026/2027 Session</a>
+            <a href="#programs" class="btn btn-white">Academic Curriculum</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <h3 class="hero-card-title">Admissions at a Glance</h3>
+            <ul class="hero-card-list">
+              <li><span class="marker">&bull;</span> <div><strong>Rolling Admissions:</strong> Now reviewing priority applications for Fall 2026 session.</div></li>
+              <li><span class="marker">&bull;</span> <div><strong>Lekki Campus Tours:</strong> Scheduled Tuesdays and Thursdays at 10:00 AM.</div></li>
+              <li><span class="marker">&bull;</span> <div><strong>Merit Scholarships:</strong> Over &#8358;45 Million awarded in academic and arts grants annually.</div></li>
+              <li><span class="marker">&bull;</span> <div><strong>Classroom Size:</strong> Strict cap of 15 learners per classroom.</div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>University Placement</p>
+        </div>
+        <div class="stat-item">
+          <h3>9:1</h3>
+          <p>Student to Faculty Ratio</p>
+        </div>
+        <div class="stat-item">
+          <h3>34</h3>
+          <p>Cambridge & WAEC Honors</p>
+        </div>
+        <div class="stat-item">
+          <h3>22</h3>
+          <p>Acre Lekki Waterfront Grounds</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80" alt="Students in campus courtyard" class="about-img-main">
+          <div class="about-badge">
+            <div class="about-badge-num">Over 20 Years</div>
+            <div class="about-badge-lbl">Of Educational Leadership in Nigeria</div>
+          </div>
+        </div>
+        <div>
+          <div class="section-kicker">Welcome to Crestfield Lagos</div>
+          <h2 class="section-title">Where Global Standards Meet African Excellence</h2>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">
+            Located on Admiralty Way in Lekki Phase 1, Crestfield International Academy was founded on the conviction that intellectual rigor and cultural character are inseparable. Our student body balances Cambridge international qualifications with Nigerian civic leadership, competitive football and swimming championships, and creative arts.
+          </p>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">
+            "We do not merely teach learners what to think; we cultivate in them the joyful curiosity, integrity, and resilience to lead on the global stage."
+            <br><em style="font-size: 0.85rem; color: var(--text);">&mdash; Dr. Babatunde Vance, Principal & Head of Academy</em>
+          </p>
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <h4>Dual Curriculum Rigor</h4>
+              <p>Cambridge IGCSE & A-Levels integrated seamlessly with WAEC and NECO standards.</p>
+            </div>
+            <div class="pillar-card">
+              <h4>Character & Ethics</h4>
+              <p>Honor code tradition, community service leadership across Lagos communities.</p>
+            </div>
+            <div class="pillar-card">
+              <h4>Arts & Athletics</h4>
+              <p>Competitive Lagos sports leagues, symphony orchestra, and visual arts exhibitions.</p>
+            </div>
+            <div class="pillar-card">
+              <h4>Global Placements</h4>
+              <p>Admissions pathways into top universities in the UK, US, Canada, and Nigeria.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Curriculum Section -->
+  <section id="programs" style="background-color: #f1f5f9;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Academic Continuum</div>
+        <h2 class="section-title">Nurturing Growth at Every Milestone</h2>
+        <p class="section-desc">Our curriculum continuum spans foundational Early Years through pre-university Sixth Form education.</p>
+      </div>
+
+      <div class="programs-tabs">
+        <button class="tab-btn active" onclick="switchProgram('primary')">Early Years & Primary</button>
+        <button class="tab-btn" onclick="switchProgram('middle')">Junior Secondary (JSS 1-3)</button>
+        <button class="tab-btn" onclick="switchProgram('upper')">Senior School & Sixth Form</button>
+      </div>
+
+      <!-- Lower School -->
+      <div class="program-card active" id="prog-primary">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80" alt="Primary classroom learning" class="program-img">
+        <div class="program-content">
+          <div class="program-age">Nursery to Primary 5 &bull; Lekki Campus</div>
+          <h3 class="program-title">Inquiry-Led Foundations</h3>
+          <p class="program-desc">
+            Early education at Crestfield pairs the British Early Years Foundation Stage (EYFS) with Singapore Math, phonetic reading mastery, Nigerian cultural appreciation, and hands-on exploratory science.
+          </p>
+          <ul class="curriculum-list">
+            <li>Singapore Math Method</li>
+            <li>Hands-on Science Explorations</li>
+            <li>Early French Immersion & Yoruba</li>
+            <li>Studio Art & African Music</li>
+            <li>Swimming & Physical Fitness</li>
+            <li>Social-Emotional Learning (SEL)</li>
+          </ul>
+          <div style="font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:14px;">Tuition: &#8358;850,000 per term</div>
+          <a href="#admissions" class="btn btn-outline" style="align-self: flex-start;">Inquire for Primary School</a>
+        </div>
+      </div>
+
+      <!-- Middle School -->
+      <div class="program-card" id="prog-middle">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80" alt="Middle school science project" class="program-img">
+        <div class="program-content">
+          <div class="program-age">Ages 11 - 14 &bull; Junior Secondary</div>
+          <h3 class="program-title">Analytical Growth & Pre-IGCSE</h3>
+          <p class="program-desc">
+            Junior secondary students transition into critical thinkers. Our curriculum covers Checkpoint, BECE requirements, robotics laboratory competitions, public speaking, and French and Mandarin language pathways.
+          </p>
+          <ul class="curriculum-list">
+            <li>Algebra & Pre-Geometry</li>
+            <li>Robotics & Python Coding</li>
+            <li>Civic Education & World History</li>
+            <li>Integrated Sciences in Lab</li>
+            <li>Debating Society & Model UN</li>
+            <li>Junior Athletics & Drama Society</li>
+          </ul>
+          <div style="font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:14px;">Tuition: &#8358;1,200,000 per term</div>
+          <a href="#admissions" class="btn btn-outline" style="align-self: flex-start;">Inquire for Junior Secondary</a>
+        </div>
+      </div>
+
+      <!-- Upper School -->
+      <div class="program-card" id="prog-upper">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" alt="Upper school seminar discussion" class="program-img">
+        <div class="program-content">
+          <div class="program-age">Ages 14 - 18 &bull; Senior School & Sixth Form</div>
+          <h3 class="program-title">Cambridge IGCSE, WAEC & A-Levels</h3>
+          <p class="program-desc">
+            Senior students pursue an internationally recognized dual diploma. Individualized university counseling prepares learners for placement into Russell Group UK universities, US Ivy League colleges, and top medical and engineering institutions.
+          </p>
+          <ul class="curriculum-list">
+            <li>Cambridge IGCSE & A-Levels</li>
+            <li>WAEC SSCE Honors Track</li>
+            <li>Advanced Biotechnology Labs</li>
+            <li>Further Mathematics & Economics</li>
+            <li>Fine Arts & Orchestral Symphony</li>
+            <li>Senior Capstone Defense</li>
+          </ul>
+          <div style="font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:14px;">Tuition: &#8358;1,650,000 per term</div>
+          <a href="#admissions" class="btn btn-outline" style="align-self: flex-start;">Inquire for Senior School</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section id="facilities">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Campus Grounds</div>
+        <h2 class="section-title">World-Class Lekki Learning Facilities</h2>
+        <p class="section-desc">Set along the peaceful Lekki waterfront, our campus unites state-of-the-art laboratories with lush green playing fields and residential halls.</p>
+      </div>
+
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Science Laboratory" class="facility-img">
+          <div class="facility-body">
+            <h4>Bannister STEM Innovation Center</h4>
+            <p>Four advanced biochemistry laboratories, 3D additive printing suites, and automated electronics testbenches.</p>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" alt="Memorial Library" class="facility-img">
+          <div class="facility-body">
+            <h4>Wellington Memorial Library</h4>
+            <p>Over 40,000 print volumes, peer-reviewed research databases, quiet study bays, and collaborative conference suites.</p>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=800&q=80" alt="Performing Arts Hall" class="facility-img">
+          <div class="facility-body">
+            <h4>Blackwood Hall for the Arts</h4>
+            <p>A 550-seat theater, black-box rehearsal studio, acoustic orchestral auditorium, and digital music recording room.</p>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="Athletic Complex" class="facility-img">
+          <div class="facility-body">
+            <h4>Pinnacle Athletics Complex</h4>
+            <p>FIFA-regulation turf football pitch, 8-lane all-weather running track, 2 indoor basketball courts, and fitness center.</p>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Aquatics Center" class="facility-img">
+          <div class="facility-body">
+            <h4>Aquatic Natatorium</h4>
+            <p>Competition 25-meter heated swimming pool supporting school galas, water safety instruction, and inter-school tournaments.</p>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="Campus Quadrangle" class="facility-img">
+          <div class="facility-body">
+            <h4>The Palm Quadrangle & Boardwalk</h4>
+            <p>Shaded waterfront study lawns, outdoor amphitheater for assembly, and secure, landscaped recreational spaces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Campus Gallery</div>
+        <h2 class="section-title">Life at Crestfield Academy</h2>
+        <p class="section-desc">Snapshots of student discovery, laboratory research, athletic championships, and artistic performances.</p>
+      </div>
+
+      <div class="gallery-filter">
+        <button class="filter-btn active" onclick="filterGallery('all')">All Images</button>
+        <button class="filter-btn" onclick="filterGallery('campus')">Campus & Grounds</button>
+        <button class="filter-btn" onclick="filterGallery('academics')">Academics & Labs</button>
+        <button class="filter-btn" onclick="filterGallery('arts')">Arts & Music</button>
+        <button class="filter-btn" onclick="filterGallery('athletics')">Athletics</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item" data-cat="campus" onclick="openLightbox('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=85', 'Lekki Campus Main Quadrangle')">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Historic Quad">
+          <div class="gallery-overlay"><span class="gallery-caption">Main Quadrangle & Clocktower</span></div>
+        </div>
+
+        <div class="gallery-item" data-cat="academics" onclick="openLightbox('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85', 'Advanced Chemistry Laboratory')">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Chemistry Lab">
+          <div class="gallery-overlay"><span class="gallery-caption">Biochemistry Research Lab</span></div>
+        </div>
+
+        <div class="gallery-item" data-cat="arts" onclick="openLightbox('https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=85', 'Youth Symphonic Orchestra Performance')">
+          <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=600&q=80" alt="Orchestra">
+          <div class="gallery-overlay"><span class="gallery-caption">Youth Symphonic Orchestra</span></div>
+        </div>
+
+        <div class="gallery-item" data-cat="athletics" onclick="openLightbox('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=85', 'Varsity Football Under Floodlights')">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80" alt="Varsity Field">
+          <div class="gallery-overlay"><span class="gallery-caption">Varsity Football Stadium</span></div>
+        </div>
+
+        <div class="gallery-item" data-cat="academics" onclick="openLightbox('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=85', 'Harkness Table Literature Seminar')">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Seminar Room">
+          <div class="gallery-overlay"><span class="gallery-caption">Harkness Seminar Room</span></div>
+        </div>
+
+        <div class="gallery-item" data-cat="campus" onclick="openLightbox('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85', 'Lekki Main Academic Hall')">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80" alt="Main Hall">
+          <div class="gallery-overlay"><span class="gallery-caption">Main Academic Hall</span></div>
+        </div>
+
+        <div class="gallery-item" data-cat="arts" onclick="openLightbox('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=85', 'Visual Fine Arts Studio Exhibition')">
+          <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Arts Studio">
+          <div class="gallery-overlay"><span class="gallery-caption">Fine Arts Studio</span></div>
+        </div>
+
+        <div class="gallery-item" data-cat="athletics" onclick="openLightbox('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=85', 'Inter-House Swimming Championship')">
+          <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80" alt="Aquatics Time Trials">
+          <div class="gallery-overlay"><span class="gallery-caption">Inter-House Swimming Trials</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admissions & Inquiry Form Section -->
+  <section id="admissions">
+    <div class="container">
+      <div class="admissions-wrap">
+        <div class="admissions-grid">
+          
+          <!-- Left: Admissions Information -->
+          <div class="admissions-info">
+            <span style="color: #facc15; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Join Our Community</span>
+            <h3>Admissions & Enrollment</h3>
+            <p>We welcome curious, motivated students who will contribute positively to our community of scholars, artists, and leaders in Lagos.</p>
+            
+            <ul class="steps-list">
+              <li class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <h5>Submit Inquiry</h5>
+                  <p>Complete the interest form to connect with our Lekki admissions counselors.</p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <h5>Campus Visit & Assessment</h5>
+                  <p>Participate in a student shadow tour and standard grade-level assessment.</p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <h5>Application & Records</h5>
+                  <p>Submit previous school transcripts and recommendation letters.</p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                  <h5>Offer of Admission</h5>
+                  <p>Enrollment confirmation and parent welcome packet dispatched.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="tuition-box">
+              <strong style="color: #fff; display: block; margin-bottom: 4px;">Tuition Schedule & Financial Assistance (2026/2027)</strong>
+              Day Tuition: from &#8358;850,000/term. Full Boarding: &#8358;2,400,000/term. Need-based bursaries and academic merit scholarships available upon formal assessment.
+            </div>
+          </div>
+
+          <!-- Right: Admissions Inquiry Form -->
+          <div class="inquiry-form-wrap">
+            <h4>Admissions Inquiry Form</h4>
+            <p class="sub">Complete the form below to receive our prospectus or schedule a visit to our Lekki Phase 1 campus.</p>
+
+            <form id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="studentFirstName">Student First Name *</label>
+                  <input type="text" id="studentFirstName" class="form-input" placeholder="e.g. Chinedu" required>
+                </div>
+                <div class="form-group">
+                  <label for="studentLastName">Student Last Name *</label>
+                  <input type="text" id="studentLastName" class="form-input" placeholder="e.g. Adeleke" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gradeApplying">Grade Level Applying *</label>
+                  <select id="gradeApplying" class="form-select" required>
+                    <option value="" disabled selected>Select Grade</option>
+                    <option value="Early Years / Nursery">Early Years / Nursery</option>
+                    <option value="Primary School (Grades 1-5)">Primary School (Grades 1-5)</option>
+                    <option value="Junior Secondary (JSS 1-3)">Junior Secondary (JSS 1-3)</option>
+                    <option value="Senior Secondary (SSS 1-3)">Senior Secondary (SSS 1-3)</option>
+                    <option value="Cambridge A-Levels / Sixth Form">Cambridge A-Levels / Sixth Form</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="entryYear">Intended Academic Session *</label>
+                  <select id="entryYear" class="form-select" required>
+                    <option value="2026/2027 Session (September)">2026/2027 Session (September)</option>
+                    <option value="Mid-Year January Transfer">Mid-Year January Transfer</option>
+                    <option value="2027/2028 Session">2027/2028 Session</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="parentName">Parent / Guardian Full Name *</label>
+                  <input type="text" id="parentName" class="form-input" placeholder="e.g. Dr. Babatunde Adeleke" required>
+                </div>
+                <div class="form-group">
+                  <label for="parentEmail">Email Address *</label>
+                  <input type="email" id="parentEmail" class="form-input" placeholder="e.g. b.adeleke@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="parentPhone">Telephone / WhatsApp Number *</label>
+                <input type="tel" id="parentPhone" class="form-input" placeholder="0803 000 0000 or +234..." required>
+              </div>
+
+              <div class="form-group">
+                <label for="studentInterests">Academic or Extracurricular Interests</label>
+                <input type="text" id="studentInterests" class="form-input" placeholder="e.g. Robotics, Football, Piano, Debate">
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Special Questions or Boarding Inquiries</label>
+                <textarea id="notes" class="form-textarea" placeholder="Let us know if you require school bus pickup details (Ikoyi, Victoria Island, Ajah, Ikeja) or boarding hostel options..."></textarea>
+              </div>
+
+              <div style="margin-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">&bull; Our Lekki admissions desk responds within 24 hours.</span>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Submit Admissions Request &rarr;</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section id="faqs" style="background: #f1f5f9;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Frequently Asked Questions</div>
+        <h2 class="section-title">Answers for Prospective Families</h2>
+        <p class="section-desc">Key details on curriculum accreditations, bus routes, boarding, and admissions timelines.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>What curriculum is offered at Crestfield Academy Lagos?</span>
+            <span class="faq-icon">&plus;</span>
+          </button>
+          <div class="faq-body">
+            We deliver an integrated dual curriculum. Students prepare for Cambridge International Examinations (Checkpoint, IGCSE, and Cambridge A-Levels) alongside the Nigerian National Curriculum (BECE and WAEC SSCE). This equips our graduates for both Nigerian university matriculation and admission into top universities across the UK, United States, and Canada.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>What areas are covered by the Crestfield school bus service?</span>
+            <span class="faq-icon">&plus;</span>
+          </button>
+          <div class="faq-body">
+            Our monitored air-conditioned school bus fleet covers routes across Lekki Phase 1, Ikoyi, Victoria Island, Oniru, Chevron, Ikate, Ajah, and select Mainland pickup points (Ikeja GRA). All buses feature GPS tracking and onboard staff attendants.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>Are boarding facilities available for secondary students?</span>
+            <span class="faq-icon">&plus;</span>
+          </button>
+          <div class="faq-body">
+            Yes. For Junior and Senior Secondary learners (JSS 1 through SSS 3 / Sixth Form), Crestfield provides supervised modern residential boarding hostels separated by gender. The boarding experience includes evening prep, pastoral counseling, weekend sporting activities, and dedicated catering.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <span>What is the typical class size?</span>
+            <span class="faq-icon">&plus;</span>
+          </button>
+          <div class="faq-body">
+            Class sizes are strictly capped at 15 learners per classroom, ensuring an average student-to-faculty ratio of 9:1. This guarantees individualized academic tracking, mentoring, and support.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Gallery -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-card" onclick="event.stopPropagation()">
+      <button style="position: absolute; top: 12px; right: 14px; color: #fff; font-size: 1.6rem; cursor: pointer; z-index: 10;" onclick="closeLightboxDirect()">&times;</button>
+      <img id="lightboxImg" src="" alt="Enlarged campus view" class="lightbox-img">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Crestfield International Academy</h4>
+          <p>
+            An independent, co-educational British-Nigerian institution dedicated to scholarly distinction, creative innovation, and ethical leadership in Lagos.
+          </p>
+          <p style="color: #64748b;">
+            Plot 12, Admiralty Way, Lekki Phase 1, Lagos, Nigeria<br>
+            Admissions Desk: (01) 888-2040 &bull; admissions@crestfield.edu.ng
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#about">About Our Heritage</a></li>
+            <li><a href="#programs">Academic Curriculum</a></li>
+            <li><a href="#facilities">Campus Grounds</a></li>
+            <li><a href="#gallery">Life at Crestfield</a></li>
+            <li><a href="index.html">Portfolio Home</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>School Community</h5>
+          <ul class="footer-links">
+            <li><a href="#faqs">Frequently Asked Questions</a></li>
+            <li><a href="#admissions">Tuition Schedules</a></li>
+            <li><a href="#programs">Cambridge IGCSE & A-Levels</a></li>
+            <li><a href="#facilities">Sports & Natatorium</a></li>
+            <li><a href="#admissions">Admissions Inquiry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Lekki Campus Hours</h5>
+          <p style="line-height: 1.6; margin-bottom: 8px;">
+            Monday &ndash; Friday: 7:30 AM &ndash; 4:30 PM<br>
+            Admissions Office: 8:00 AM &ndash; 3:00 PM
+          </p>
+          <a href="#admissions" class="btn btn-accent" style="font-size: 0.78rem; padding: 6px 14px; margin-top: 6px;">Schedule A Tour</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Crestfield International Academy, Lekki, Lagos. Designed & Developed by Stephanie N.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="#about">Accreditations</a>
+          <a href="#admissions">Tuition</a>
+          <a href="index.html">Portfolio Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Academic program tabs
+    function switchProgram(programKey) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const cards = document.querySelectorAll('.program-card');
+      cards.forEach(card => card.classList.remove('active'));
+
+      const activeCard = document.getElementById('prog-' + programKey);
+      if (activeCard) {
+        activeCard.classList.add('active');
+      }
+    }
+
+    // Gallery category filter
+    function filterGallery(category) {
+      const btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-cat') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox modal
+    function openLightbox(imgUrl, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      img.src = imgUrl;
+      cap.textContent = caption;
+      modal.classList.add('open');
+    }
+    function closeLightbox(e) {
+      if (e.target.id === 'lightboxModal') {
+        document.getElementById('lightboxModal').classList.remove('open');
+      }
+    }
+    function closeLightboxDirect() {
+      document.getElementById('lightboxModal').classList.remove('open');
+    }
+
+    // FAQ Accordion
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    }
+
+    // Admissions Inquiry Form Submission
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const firstName = document.getElementById('studentFirstName').value.trim();
+      const lastName = document.getElementById('studentLastName').value.trim();
+      const grade = document.getElementById('gradeApplying').value;
+      const parent = document.getElementById('parentName').value.trim();
+
+      alert('Admissions Request Confirmed!\nParent: ' + parent + '\nStudent: ' + firstName + ' ' + lastName + ' (' + grade + ')\nOur Lekki Phase 1 admissions counselor will contact you within 24 hours.');
+      document.getElementById('inquiryForm').reset();
+    }
+  </script>
+</body>
+</html>
